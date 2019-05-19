@@ -7,7 +7,6 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HomePage } from 'src/pages/home/home.page';
 import { AddPlacePage } from 'src/pages/add-place/add-place.page';
 import { PlacePage } from 'src/pages/place/place.page';
@@ -28,7 +27,7 @@ import { SetLocationPage } from 'src/pages/set-location/set-location.page';
     PlacePage,
     SetLocationPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,

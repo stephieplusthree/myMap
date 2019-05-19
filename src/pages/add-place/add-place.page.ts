@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-place',
-  templateUrl: './add-place.page.html',
-  styleUrls: ['./add-place.page.scss'],
+  selector: 'page-add-place',
+  templateUrl: './add-place.page.html'
 })
-export class AddPlacePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class AddPlacePage {
+  onSubmit(form: NgForm) {
+    console.log(form.value);
   }
-
 }
