@@ -7,10 +7,11 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
-import { HomePage } from 'src/pages/home/home.page';
-import { AddPlacePage } from 'src/pages/add-place/add-place.page';
-import { PlacePage } from 'src/pages/place/place.page';
-import { SetLocationPage } from 'src/pages/set-location/set-location.page';
+import { HomePage } from '../pages/home/home.page';
+import { AddPlacePage } from '../pages/add-place/add-place';
+import { PlacePage } from '../pages/place/place.page';
+import { SetLocationPage } from '../pages/set-location/set-location';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { SetLocationPage } from 'src/pages/set-location/set-location.page';
     PlacePage,
     SetLocationPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot()],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBX5oQ2ZkMKJ_HVqO8q-sE3QPvj3ZJxY0Y'
+    })
+  ],
   providers: [
     StatusBar,
     SplashScreen,

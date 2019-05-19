@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from '@ionic/angular';
-import { AddPlacePage } from '../add-place/add-place.page';
+import { AddPlacePage } from '../add-place/add-place';
 
 @Component({
   selector: 'page-home',
