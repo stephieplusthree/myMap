@@ -8,10 +8,26 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomePage } from 'src/pages/home/home.page';
+import { AddPlacePage } from 'src/pages/add-place/add-place.page';
+import { PlacePage } from 'src/pages/place/place.page';
+import { SetLocationPage } from 'src/pages/set-location/set-location.page';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    HomePage,
+    AddPlacePage,
+    PlacePage,
+    SetLocationPage
+],
+  entryComponents: [
+    AppComponent,
+    HomePage,
+    AddPlacePage,
+    PlacePage,
+    SetLocationPage
+  ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,

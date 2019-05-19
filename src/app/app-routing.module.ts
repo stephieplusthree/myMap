@@ -3,7 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'home', loadChildren: '.pages/home/home.module#HomePageModule' },
+  { path: 'place', loadChildren: '.pages/place/place.module#PlacePageModule' },
+  { path: 'add-place', loadChildren: '.pages/add-place/add-place.module#AddPlacePageModule' },
+  { path: 'set-location', loadChildren: 'pages./set-location/set-location.module#SetLocationPageModule' },
 ];
 
 @NgModule({
