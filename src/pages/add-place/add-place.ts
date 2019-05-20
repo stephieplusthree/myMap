@@ -17,7 +17,10 @@ export class AddPlacePage {
   };
   locationIsSet = false;
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController,
+              private loadingCtrl: LoadingController,
+              private toastCtrl: ToastController) {
+}
 
   onSubmit(form: NgForm) {
     console.log(form.value);
@@ -38,9 +41,14 @@ export class AddPlacePage {
   }
 
   onLocate() {
+    const loader = this.loadingCtrl.create({
+      content: 'Getting your Location...'
+    });
+    loader.present();
     Geolocation.getCurrentPosition()
       .then(
         location => {
+          loader.dismiss();
           this.location.lat = location.coords.latitude;
           this.location.lng = location.coords.longitude;
           this.locationIsSet = true;
@@ -48,8 +56,12 @@ export class AddPlacePage {
       )
       .catch(
         error => {
-          console.log(error);
+          loader.dismiss();
+          const toast = this.toastCtrl.create({
+            message: 'Could get location, please pick it manually!',
+            duration: 2500
+          });
+          toast.present();
         }
       );
-  }
 }
