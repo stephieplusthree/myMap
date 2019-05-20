@@ -55,7 +55,7 @@
             </button>
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row *ngIf="locationIsSet">
           <ion-col>
             <agm-map
               [latitude]="location.lat"
@@ -98,7 +98,7 @@
               color="secondary"
               block
               type="submit"
-              [disabled]="!f.valid">
+              [disabled]="!f.valid || !locationIsSet">
               Add this placeholder
             </button>
           </ion-col>
