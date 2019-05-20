@@ -1,5 +1,7 @@
 {
   "name": "myMap",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
