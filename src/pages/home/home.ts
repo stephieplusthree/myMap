@@ -5,8 +5,7 @@ import { AddPlacePage } from '../add-place/add-place';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: 'home.html',
 })
 export class HomePage {
   addPlacePage = AddPlacePage;
