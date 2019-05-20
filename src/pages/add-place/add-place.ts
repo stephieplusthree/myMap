@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Geolocation, Camera } from '@ionic-native/geolocation/ngx';
 
-import { SetLocationPage } from '../set-location/set-location'
-import { Location } from "../../models/location";
+import { SetLocationPage } from '../set-location/set-location';
+import { Location } from '../../models/location';
 
 @Component({
   selector: 'page-add-place',
@@ -64,4 +64,22 @@ export class AddPlacePage {
           toast.present();
         }
       );
+  }
+
+  onTakePhoto() {
+    Camera.getPicture({
+      encodingType: Camera.EncodingType.JPEG,
+      correctOrientation: true
+    })
+      .then(
+        imageData => {
+          console.log(imageData);
+        }
+      )
+      .catch(
+        err => {
+          console.log(err);
+        }
+      );
+  }
 }
