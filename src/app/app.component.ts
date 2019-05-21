@@ -7,23 +7,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HomePage } from '../pages/home/home';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.html'
 })
-export class AppComponent {
-  
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
+export class MyApp {
+  rootPage = HomePage;
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+  constructor(platform: Platform) {
+    platform.ready().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      StatusBar.styleDefault();
+      Splashscreen.hide();
     });
   }
 }
